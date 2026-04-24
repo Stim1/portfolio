@@ -9,7 +9,7 @@ import BlogCard from '@/components/blog/BlogCard.astro';
 import { getCollection } from 'astro:content';
 import siteConfig from '@/config/site.config';
 
-const projectItems = await getCollection('projects');
+const projectItems = await getCollection('projects', ({ data }) => !data.draft);
 const featuredProjects = projectItems
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 4);
@@ -23,33 +23,33 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 ---
 
 <LandingLayout
-  title="Astro Rocket — Astro 6 starter theme"
-  description="A production-ready Astro 6 starter with 12 beautiful themes, 57+ components, built-in i18n, dark mode and a fast, modern foundation to build anything on."
+  title="Nazar Hnatyuk — Frontend Developer"
+  description="Frontend developer with 3 years of experience building fast, responsive, and user-friendly web interfaces."
   image="/og-default.svg"
   includePersonSchema={true}
   includeProfessionalServiceSchema={true}
 >
   <!-- Hero -->
   <Hero layout="centered" size="xl" class="hero-dark-gradient" showScrollIndicator descriptionClass="max-w-3xl">
-    <Badge slot="badge" variant="brand" pill pulse class="dark:text-brand-200">Available for new projects</Badge>
+    <Badge slot="badge" variant="brand" pill pulse class="dark:text-brand-200">Available for frontend work</Badge>
 
     <h1 slot="title">
-      <span class="text-foreground [-webkit-text-fill-color:currentColor]">Astro Rocket —</span><br />
-      <span class="text-brand-500 [-webkit-text-fill-color:var(--color-brand-500)] dark:text-foreground dark:[-webkit-text-fill-color:currentColor]">Web Designer</span><span class="text-foreground [-webkit-text-fill-color:currentColor]"> &amp; Developer</span>
+      <span class="text-foreground [-webkit-text-fill-color:currentColor]">Nazar Hnatyuk —</span><br />
+      <span class="text-brand-500 [-webkit-text-fill-color:var(--color-brand-500)] dark:text-foreground dark:[-webkit-text-fill-color:currentColor]">Frontend</span><span class="text-foreground [-webkit-text-fill-color:currentColor]"> Developer</span>
     </h1>
 
     <p slot="description">
-      A production-ready Astro 6 starter with 12 beautiful themes, 57+ components, built-in i18n, dark mode and a fast, modern foundation to build anything on.
+      I build clean, responsive interfaces with modern frontend tools, focusing on performance, accessibility, and details that make products feel polished.
     </p>
 
    <Fragment slot="actions">
-      <Button size="lg" href="https://github.com/hansmartens68/Astro-Rocket">
-        Get it on GitHub
+      <Button size="lg" href="/projects">
+        View my work
         <Icon name="arrow-right" size="sm" />
       </Button>
-      <Button size="lg" variant="outline" href="/blog/astro-rocket-getting-started">
-        <Icon name="rocket" size="sm" />
-        Get started
+      <Button size="lg" variant="outline" href="/contact">
+        <Icon name="mail" size="sm" />
+        Contact me
         <Icon name="arrow-right" size="sm" />
       </Button>
     </Fragment>
@@ -95,7 +95,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
             <div class="flex-1 min-w-0">
               <h3 class="text-base font-semibold text-foreground">Web Development</h3>
               <p class="text-sm text-foreground-muted leading-relaxed mt-1.5">
-                Fast, accessible websites built with modern tooling. Astro, Tailwind, and best-practice architecture from day one.
+                Fast, accessible websites built with modern tooling, clean component structure, and attention to maintainability.
               </p>
             </div>
           </div>
@@ -127,15 +127,15 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           <div class="flex flex-col gap-6 mb-6">
             <Badge variant="brand" pill class="self-start">About me</Badge>
             <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Designer, developer,<br />
-              <span class="text-brand-500">and blogger.</span>
+              Frontend developer,<br />
+              <span class="text-brand-500">focused on clean UI.</span>
             </h2>
           </div>
           <p class="text-lg text-foreground-muted leading-relaxed mb-4">
-           Sixteen years of hands-on experience{siteConfig.address?.city ? `, based in ${siteConfig.address.city}` : ''} and available for clients worldwide. I build with Astro because it aligns with how I think about the web: lean, purposeful, and built to last.
+           I have 3 years of hands-on frontend experience{siteConfig.address?.city ? `, based in ${siteConfig.address.city}` : ''}, building responsive websites and interfaces with modern tools.
           </p>
           <p class="text-lg text-foreground-muted leading-relaxed mb-8">
-           On the blog, I share the ideas and decisions that shape my work.
+           I enjoy turning ideas into smooth, practical user experiences and improving the small details that make a product easier to use.
           </p>
            <Button variant="outline" href="/about" class="self-start">
             More about me
@@ -146,7 +146,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           <div class="grid grid-cols-2 gap-3 flex-1 auto-rows-fr">
             <div class="bg-background-tertiary rounded-xl p-5 flex flex-col items-center justify-center text-center gap-2 border-t-2 border-brand-500/40 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 cursor-default h-full">
               <Icon name="history" class="w-10 h-10 text-brand-500" />
-              <p class="text-sm font-semibold text-foreground">16 Years Experience</p>
+              <p class="text-sm font-semibold text-foreground">3 Years Experience</p>
             </div>
             <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="bg-background-tertiary rounded-xl p-5 flex flex-col items-center justify-center text-center gap-2 border-t-2 border-brand-500/40 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 h-full">
               <svg class="w-10 h-10 text-brand-500" viewBox="0 0 1280 1280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -224,7 +224,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           </h2>
         </div>
         <p class="text-lg text-foreground-muted">
-          Replace these with your own client quotes.
+          A few words from people I've worked with.
         </p>
       </div>
 
@@ -240,15 +240,15 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
               ))}
             </div>
             <blockquote class="flex-1 text-foreground-muted leading-relaxed">
-              "The new site launched on time and hit every goal we set. Performance improved dramatically — load times dropped and the feedback from our customers has been overwhelmingly positive."
+              "Nazar was easy to work with, responsive, and focused on getting the interface right. The final result felt clean, fast, and well thought through."
             </blockquote>
             <div class="flex items-center gap-3 pt-4 border-t border-border">
               <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-500/30 to-brand-500/10 flex items-center justify-center text-brand-500 font-bold text-sm shrink-0">
                 A
               </div>
               <div>
-                <p class="text-sm font-semibold text-foreground">Alex Morgan</p>
-                <p class="text-xs text-foreground-muted">Founder, Bright Studio</p>
+                <p class="text-sm font-semibold text-foreground">Project collaborator</p>
+                <p class="text-xs text-foreground-muted">Frontend project</p>
               </div>
             </div>
           </div>
@@ -265,15 +265,15 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
               ))}
             </div>
             <blockquote class="flex-1 text-foreground-muted leading-relaxed">
-              "Straightforward from first conversation to final handover. The right questions were asked, we were kept in the loop throughout, and the end result exceeded what we imagined. Would recommend without hesitation."
+              "He pays attention to details and keeps the code understandable. Communication was clear and the work moved forward smoothly."
             </blockquote>
             <div class="flex items-center gap-3 pt-4 border-t border-border">
               <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-500/30 to-brand-500/10 flex items-center justify-center text-brand-500 font-bold text-sm shrink-0">
                 S
               </div>
               <div>
-                <p class="text-sm font-semibold text-foreground">Sarah Chen</p>
-                <p class="text-xs text-foreground-muted">CEO, Luma Agency</p>
+                <p class="text-sm font-semibold text-foreground">Team member</p>
+                <p class="text-xs text-foreground-muted">Web application work</p>
               </div>
             </div>
           </div>
@@ -282,45 +282,46 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
     </div>
   </section>
 
-  <!-- Blog -->
-  <section class="relative z-10 py-[var(--space-section-md)] bg-background-secondary border-t border-border">
-    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8">
-      <div class="flex items-end justify-between" data-reveal>
-        <div class="flex flex-col gap-6">
-          <Badge variant="brand" pill class="self-start">From the blog</Badge>
-          <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
-            Featured
-          </h2>
+  {posts.length > 0 && (
+    <section class="relative z-10 py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+      <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8">
+        <div class="flex items-end justify-between" data-reveal>
+          <div class="flex flex-col gap-6">
+            <Badge variant="brand" pill class="self-start">From the blog</Badge>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
+              Featured
+            </h2>
+          </div>
+          <a href="/blog" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-brand-500 hover:text-brand-600 transition-colors shrink-0">
+            View all posts
+            <Icon name="arrow-right" size="sm" />
+          </a>
         </div>
-        <a href="/blog" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-brand-500 hover:text-brand-600 transition-colors shrink-0">
-          View all posts
-          <Icon name="arrow-right" size="sm" />
-        </a>
-      </div>
 
-      <div class="grid gap-6 md:grid-cols-3" data-reveal data-reveal-delay="1">
-        {posts.map((post) => (
-          <BlogCard
-            title={post.data.title}
-            description={post.data.description}
-            href={`/blog/${post.id.replace('en/', '')}`}
-            publishedAt={post.data.publishedAt}
-            tags={post.data.tags}
-            author={post.data.author}
-            image={post.data.image}
-            svgSlug={post.data.svgSlug}
-          />
-        ))}
-      </div>
+        <div class="grid gap-6 md:grid-cols-3" data-reveal data-reveal-delay="1">
+          {posts.map((post) => (
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              href={`/blog/${post.id.replace('en/', '')}`}
+              publishedAt={post.data.publishedAt}
+              tags={post.data.tags}
+              author={post.data.author}
+              image={post.data.image}
+              svgSlug={post.data.svgSlug}
+            />
+          ))}
+        </div>
 
-      <div class="text-center sm:hidden">
-        <Button variant="outline" href="/blog">
-          View all posts
-          <Icon name="arrow-right" size="sm" />
-        </Button>
+        <div class="text-center sm:hidden">
+          <Button variant="outline" href="/blog">
+            View all posts
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
  <!-- CTA -->
   <section class="relative z-10 py-[var(--space-section-md)] bg-background">
@@ -329,7 +330,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         Have a project in mind?
       </h2>
       <p class="text-lg text-foreground-muted mb-8 text-balance">
-        Whether it's a new build or something that needs a fresh perspective — I'd love to hear about it.
+        Whether it's a new interface or an existing product that needs frontend polish — I'd love to hear about it.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button size="lg" href="/contact">

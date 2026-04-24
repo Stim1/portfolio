@@ -1,9 +1,9 @@
 {
-  "name": "astro-rocket",
+  "name": "nazar-hnatyuk-portfolio",
   "version": "1.0.0",
-  "description": "Astro Rocket — A production-ready Astro 6 theme built on Tailwind CSS v4",
+  "description": "Portfolio website for Nazar Hnatyuk, frontend developer",
   "type": "module",
-  "author": "Hans Martens",
+  "author": "Nazar Hnatyuk",
   "license": "MIT",
   "keywords": [
     "astro",
@@ -19,11 +19,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hansmartens68/astro-rocket"
+    "url": "https://github.com/nazarhnatyuk/portfolio"
   },
-  "homepage": "https://github.com/hansmartens68/astro-rocket#readme",
+  "homepage": "https://nazarhnatyuk.dev",
   "bugs": {
-    "url": "https://github.com/hansmartens68/astro-rocket/issues"
+    "url": "https://github.com/nazarhnatyuk/portfolio/issues"
   },
   "scripts": {
     "dev": "astro dev",

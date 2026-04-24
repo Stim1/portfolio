@@ -13,7 +13,7 @@ const socialLinks = resolveSocialLinks(siteConfig.socialLinks);
 
 // Get all published posts
 const allPosts = await getCollection('blog', ({ data }) => {
-  return import.meta.env.PROD ? data.draft !== true : true;
+  return data.draft !== true;
 });
 
 // Filter by English locale and sort by date
@@ -38,7 +38,7 @@ const getPostUrl = (postId: string) => {
 };
 ---
 
-<PageLayout title="Blog — Astro Rocket" description="Articles on web design, development, and the web by Astro Rocket." showScrollProgress eagerReveal>
+<PageLayout title="Blog — Nazar Hnatyuk" description="Articles and notes on frontend development, web performance, and UI implementation by Nazar Hnatyuk." showScrollProgress eagerReveal>
   <Hero layout="centered" size="sm">
     <Badge slot="badge" variant="brand" pill>
       <Icon name="book" size="sm" />
@@ -47,7 +47,7 @@ const getPostUrl = (postId: string) => {
 
     <h1 slot="title">Blog</h1>
 
-    <p slot="description">Articles on Astro, web performance, design systems, and building with Astro Rocket.</p>
+    <p slot="description">Notes on frontend development, performance, UI details, and the tools I use.</p>
   </Hero>
 
   <!-- Featured Posts Section -->

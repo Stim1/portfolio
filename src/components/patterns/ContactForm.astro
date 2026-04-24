@@ -27,6 +27,7 @@ const {
 >
   <!-- Name + Email side by side on sm+ -->
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <label>
     <Input
       label="Name"
       name="name"
@@ -34,6 +35,8 @@ const {
       required
       autocomplete="name"
     />
+    </label>
+    <label>
     <Input
       label="Email"
       name="email"
@@ -41,24 +44,29 @@ const {
       required
       autocomplete="email"
     />
+    </label>
   </div>
-
+<label>
   <Input
     label="Subject"
     name="subject"
     type="text"
   />
-
+</label>
+<label>
   <Textarea
     label="Message"
     name="message"
     required
     rows={5}
   />
+</label>
 
   <!-- Honeypot field for spam protection -->
   <div class="hidden" aria-hidden="true">
-    <input type="text" name="honeypot" tabindex="-1" autocomplete="off" />
+    <label>
+      <input type="text" name="honeypot" tabindex="-1" autocomplete="off" />
+    </label>
   </div>
 
   <div id="form-message" class="hidden text-sm"></div>

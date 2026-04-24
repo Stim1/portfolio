@@ -58,29 +58,27 @@ export interface SiteConfig {
 }
 
 const siteConfig: SiteConfig = {
-  name: 'Astro Rocket',
+  name: 'Nazar Hnatyuk',
   description:
-    'Astro Rocket — A production-ready Astro 6 starter with 12 beautiful themes, 57+ components, built-in i18n, dark mode and a fast, modern foundation to build anything on.',
-  url: SITE_URL || 'https://astrorocket.dev',
+    'Nazar Hnatyuk — Frontend developer with 3 years of experience building fast, responsive, and user-friendly web interfaces.',
+  url: SITE_URL || 'https://nazarhnatyuk.dev',
   ogImage: '/og-default.svg',
-  author: 'Hans Martens',
-  email: 'hello@hansmartens.dev',
+  author: 'Nazar Hnatyuk',
+  email: 'hello@nazarhnatyuk.dev',
   address: {
     street: '',
-    city: 'Veghel',
+    city: 'Kyiv',
     state: '',
     zip: '',
-    country: 'the Netherlands',
+    country: 'Ukraine',
   },
   socialLinks: [
-    'https://github.com/hansmartens68/Astro-Rocket',
-    'https://x.com/hansmartens_dev',
+    'https://github.com/nazarhnatyuk',
     'https://www.linkedin.com',
-    'https://bsky.app/profile/hansmartens-online.bsky.social',
   ],
   twitter: {
-    site: 'https://x.com/hansmartens_dev',
-    creator: '@hansmartens_dev',
+    site: '',
+    creator: '',
   },
   verification: {
     google: GOOGLE_SITE_VERIFICATION,
@@ -90,7 +88,7 @@ const siteConfig: SiteConfig = {
   blogImageOverlay: true,
   branding: {
     logo: {
-      alt: 'Astro Rocket',
+      alt: 'Nazar Hnatyuk',
       imageUrl: '/favicon.svg',
     },
     favicon: {
